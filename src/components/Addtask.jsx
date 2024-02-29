@@ -62,7 +62,7 @@ const Addtask = (props) => {
           <input type="date" className="form-input mt-1 block w-full border rounded-md focus:outline-none focus:border-cyan-400" id="date" name="date" value={note.date} onChange={onChange} />
         </div>
         <button type="submit" className="btn text-white bg-purple-800 hover:bg-purple-500 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none" disabled={note.title.length < 5 || note.description.length < 5}>Add note</button>
-        {/* <button><Sms/></button> */}
+        <button><Sms/></button>
       </form>
     </div>
   </div>

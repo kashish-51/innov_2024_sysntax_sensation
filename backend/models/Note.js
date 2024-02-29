@@ -21,6 +21,11 @@ const NotesSchema = new Schema({
         type: Date,
         required: true
     },
+    priority: {  // New field for priority
+        type: String,
+        enum: ['High', 'Moderate', 'Low'],  // Allow only these values
+        default: 'Low'  // Default priority
+    }
 })
 
 module.exports = mongoose.model('note', NotesSchema);  //in bracket first write modelname the schema

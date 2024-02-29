@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AiImageGenerator from './AiImageGenerator';
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -46,13 +47,7 @@ const Showtask = () => {
         // Delete the note associated with the checkbox
         await deleteNote(id);
 
-        // Compare the date from the database with today's date
-        const today = new Date();
-        const noteDate = new Date(date);
-        if (isSameDate(today, noteDate)) {
-            // Send SMS if dates match
-            await console.log(isSameDate); // Make a request to your backend to send SMS
-        }
+       
     };
 
     const deleteNote = async (id) => {
@@ -73,24 +68,14 @@ const Showtask = () => {
         }
     };
 
-    const isSameDate = (date1, date2) => {
-        return (
-            date1.getFullYear() === date2.getFullYear() &&
-            date1.getMonth() === date2.getMonth() &&
-            date1.getDate() === date2.getDate()
-        );
-    };
-
-
-
     return (
-        <div>
+        <div className='flex flex-wrap'>
             {Array.isArray(notes) && notes.map((note) => (
-                <Card key={note._id} variant="outlined" sx={{ maxWidth: 360, backgroundColor: getCardColor(note.priority) }} className='ml-20 mt-12'>
+                <Card key={note._id} variant="outlined" sx={{ maxWidth: 360, backgroundColor: getCardColor(note.priority) }} className='ml-20 mt-12 mr-5'>
                     <Box sx={{ p: 2 }}>
                         <Stack direction="row" justifyContent="space-between" alignItems="center">
                             <Typography gutterBottom variant="h5" component="div">
-                                {note.title}
+                                {note.title} <AiImageGenerator prompt={note.title} />
                             </Typography>
                         </Stack>
                         <Typography color="text.secondary" variant="body2">

@@ -22,14 +22,14 @@ router.post('/addnote', fetchuser, [
     body('date', 'Enter a valid date').isISO8601(), // Ensure the date is in ISO 8601 format
 ], async (req, res) => {
     try {
-        const { title, description, tag, date } = req.body;
+        const { title, description, tag, date, priority } = req.body;
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
         
         const note = new Note({
-            title, description, tag, date, user: req.user.id
+            title, description, tag, date, priority , user: req.user.id
         });
         const savedNote = await note.save();
         res.json(savedNote);

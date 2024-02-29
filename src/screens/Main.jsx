@@ -1,6 +1,7 @@
 import { Dashboard } from '../components/Dashboard';
 import Header from '../components/Header';
 import Addtask from '../components/Addtask';
+import Footer from '../components/Footer'
 const Main = () => { 
     return (
         <div>
@@ -11,6 +12,7 @@ const Main = () => {
               <Addtask />
             </div>
           </div>
+          <Footer />
         </div>
       );
     }

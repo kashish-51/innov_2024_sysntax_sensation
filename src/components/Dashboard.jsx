@@ -41,6 +41,7 @@ export function Dashboard() {
             <InboxIcon className="m-5 w-5" />
           </ListItemPrefix>
           Inbox
+          
         </ListItem>
         <ListItem>
           <ListItemPrefix>

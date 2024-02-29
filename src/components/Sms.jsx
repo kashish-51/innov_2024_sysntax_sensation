@@ -1,6 +1,6 @@
 import React from 'react';
 
-class App extends React.Component {
+class Sms extends React.Component {
   handleClick = () => {
     window.location.href = 'https://twiliosms.streamlit.app/';
   };
@@ -14,4 +14,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Sms;
