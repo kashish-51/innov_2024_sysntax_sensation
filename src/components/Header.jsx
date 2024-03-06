@@ -12,7 +12,7 @@ export default function Header() {
 
     return (
         <header className="shadow sticky z-50 top-0">
-            <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+            <nav className="bg-[#C3ACD0] bg-opacity-50   px-4 lg:px-6 py-2.5   bg-blur-md  backdrop-filter backdrop-blur-md backdrop-saturate-150 rounded-lg">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-full">
                     <Link to="/" className="flex items-center">
                         <img 

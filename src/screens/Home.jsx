@@ -17,10 +17,7 @@ function Home() {
       <Header/>
  {/* <Cursor /> */}
  <Homes />
-        {/* <Outlet /> */}
-       <About/>
-        <Contact/>
-        {/* <Email /> */}
+
         <Footer />
         <ChatbotEmbed />
         {/* <TwilioSMSComponent /> */}
