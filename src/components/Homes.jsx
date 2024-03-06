@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import tada from '../assets/images/tada.png';
 import whatudu from '../assets/images/whatudu.png';
-import Cursor from './Cursor';
 
 
 export default function Homes() {
@@ -39,7 +38,6 @@ export default function Homes() {
             </div>
 
             <h1 className="text-center text-lg  text-[#482368]  sm:text-4xl py-10 font-medium">From To-Dos to Ta-Da!</h1>
-            <Cursor/>
         </div>
         </>
     );

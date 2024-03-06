@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Cursor from '../components/Cursor';
 
 
 
@@ -31,7 +30,6 @@ const Login = (props) => {
 
     return (
         <>
-        <Cursor/>
         <div className="flex min-h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8  bg-yellow">
             <h2 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-[#674188]  hover:underline">
                 Login

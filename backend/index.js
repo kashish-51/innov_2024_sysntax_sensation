@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 var cors = require('cors')
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/tudu?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.6")
+mongoose.connect("mongodb://127.0.0.1:27017/todolist?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.6")
   .then(() => {
     console.log('Connected to MongoDB');
   })

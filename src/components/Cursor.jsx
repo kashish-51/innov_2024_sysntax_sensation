@@ -1,6 +1,3 @@
-
-
-
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 
@@ -39,8 +36,8 @@ const Cursor = () => {
   }, []);
 
   return (
-    <div className="z-0 fixed top-0 left-0">
-      <div className="redball z-40  w-52 h-52 rounded-full opacity-60 shadow-sm" style={{ background: 'linear-gradient(to bottom right, #FFFBF5,  #C3ACD0, #674188)' }}></div>
+    <div className="z-0 fixed top-0 left-0 pointer-events-none">
+      <div className="redball z-40 w-52 h-52 rounded-full opacity-60 shadow-sm" style={{ background: 'linear-gradient(to bottom right, #FFFBF5,  #C3ACD0, #674188)' }}></div>
     </div>
   );
 };

@@ -1,67 +1,46 @@
-
-import {
-  Card,
-  Typography,
-  List,
-  ListItem,
-  ListItemPrefix,
-  ListItemSuffix,
-  Chip,
-} from "@material-tailwind/react";
-
-import {
-  PresentationChartBarIcon,
-  ShoppingBagIcon,
-  UserCircleIcon,
-  Cog6ToothIcon,
-  InboxIcon,
-  PowerIcon,
-} from "@heroicons/react/24/solid";
+import { Card, Typography, List, ListItem, ListItemPrefix, ListItemSuffix, Chip } from "@material-tailwind/react";
+import { PresentationChartBarIcon, UserCircleIcon, InboxIcon } from "@heroicons/react/24/solid";
 import TodayRoundedIcon from '@mui/icons-material/TodayRounded';
- 
-export function Dashboard() {
+
+
+export function Dashboard({ onAddTask }) {
   return (
-    <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className="h-[calc(100vh)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 bg-[#573178]  " style={{ backdropFilter: 'blur(5px)', backgroundColor: 'rgba(87, 49, 120, 0.8)' }}>
       <div className="m-5 w-4">
-        <Typography variant="h5" color="blue-gray">
+        <Typography variant="h5" className="text-[#F7EFE5]">
           Sidebar
         </Typography>
       </div>
       <List>
-        <ListItem>
+        <ListItem className="text-[#F7EFE5]" onClick={onAddTask}>
           <ListItemPrefix>
-            <PresentationChartBarIcon className="m-5 w-5" />
-            
+            <PresentationChartBarIcon className="m-5 w-5 text-[#F7EFE5]" />
           </ListItemPrefix>
           Add task
         </ListItem>
-        <ListItem>
+        <ListItem className="text-[#F7EFE5]">
           <ListItemPrefix>
-            
-            <InboxIcon className="m-5 w-5" />
+            <InboxIcon className="m-5 w-5 text-[#F7EFE5]" />
           </ListItemPrefix>
           Inbox
-          
         </ListItem>
-        <ListItem>
+        <ListItem className="text-[#F7EFE5]">
           <ListItemPrefix>
-          <TodayRoundedIcon className="m-5 w-5"/>
-          
+            <TodayRoundedIcon className="m-5 w-5 text-[#F7EFE5]"/>
           </ListItemPrefix>
           Today
           <ListItemSuffix>
-            <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
-
+            <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full text-[#F7EFE5]" />
           </ListItemSuffix>
         </ListItem>
-        <ListItem>
+        <ListItem className="text-[#F7EFE5]">
           <ListItemPrefix>
-            <UserCircleIcon className="m-5 w-5" />
+            <UserCircleIcon className="m-5 w-5 text-[#F7EFE5]" />
           </ListItemPrefix>
-          Upcomming
+          Upcoming
         </ListItem>
-        
       </List>
+    
     </Card>
   );
 }
