@@ -35,12 +35,12 @@ const Signup = () => {
     }
 
     return (
-        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-            <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8  bg-yellow " >
+            <h2 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-[#674188]  hover:underline">
                 Sign in to your account
             </h2>
 
-            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-opacity-50 bg-[#C3ACD0] bg-blur-md border-2 border-stone-50 backdrop-filter backdrop-blur-md backdrop-saturate-150 rounded-lg p-6 shadow-2xl">
                 <form className="space-y-6" onSubmit={handelSubmit}>
                     <div className="my -5">
                         <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
@@ -54,6 +54,7 @@ const Signup = () => {
                                 autoComplete="name"
                                 required
                                 onChange={onchange}
+                                placeholder="Tudu"
                                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
                         </div>
@@ -68,6 +69,7 @@ const Signup = () => {
                             type="email"
                             autoComplete="email"
                             required
+                            placeholder="tudu@gmail.com"
                             onChange={onchange}
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
@@ -86,7 +88,8 @@ const Signup = () => {
                             autoComplete="current-password"
                             required
                             onChange={onchange}
-                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            placeholder="shhuu....."
+                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         />
                     </div>
                     <div className="my-4">
@@ -103,6 +106,7 @@ const Signup = () => {
                                 autoComplete="current-password"
                                 required
                                 onChange={onchange}
+                                placeholder="...."
                                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
                         </div>
@@ -116,7 +120,7 @@ const Signup = () => {
 
                     </div>
                 </form>
-                <p>Already a user? <Link to="/login">Login</Link></p>
+                <p className='my-[6px]'>Already a user? <Link to="/login">Login</Link></p>
             </div>
         </div>
     )

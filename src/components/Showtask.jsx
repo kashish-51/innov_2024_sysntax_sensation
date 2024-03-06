@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import AiImageGenerator from './AiImageGenerator';
+// import AiImageGenerator from './AiImageGenerator';
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -75,7 +75,7 @@ const Showtask = () => {
                     <Box sx={{ p: 2 }}>
                         <Stack direction="row" justifyContent="space-between" alignItems="center">
                             <Typography gutterBottom variant="h5" component="div">
-                                {note.title} <AiImageGenerator prompt={note.title} />
+                                {note.title} 
                             </Typography>
                         </Stack>
                         <Typography color="text.secondary" variant="body2">
