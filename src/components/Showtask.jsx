@@ -5,9 +5,6 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
 import EditIcon from '@mui/icons-material/Edit';
 import Checkbox from '@mui/material/Checkbox';
 import NoteContext from '../context/notes/NoteContext';
@@ -20,10 +17,11 @@ const Showtask = (props) => {
     const { deleteNote } = context;
     const { note, updateNote } = props;
 
-    return (
-        <div className='flex flex-wrap '>
+    return ( 
+        <div className="w-screen h-screen bg-yellow " >
+        <div className='flex flex-wrap ' >
             
-                <Card key={note._id} variant="outlined"  className='ml-2 mt-12 mr-5 t'>
+                <Card key={note._id} variant="outlined"  className='ml-2 mt-12 mr-5 '>
                     <Box sx={{ p: 2 }}>
                         <Stack direction="row" justifyContent="space-between" alignItems="center">
                             <Typography gutterBottom variant="h5" component="div">
@@ -53,10 +51,9 @@ const Showtask = (props) => {
                 </Card>
         
         </div>
+        </div>
     );
 };
-
-
 
 export default Showtask;
 

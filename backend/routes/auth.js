@@ -109,7 +109,7 @@ try {
    const user = await User.findById(userId).select("-password") 
    res.send(user);
     
-} catch (error) {         // catch errors
+} catch (error) {     // catch errors
     console.error(error.message);
     res.status(500).send("Internal server error");
 }

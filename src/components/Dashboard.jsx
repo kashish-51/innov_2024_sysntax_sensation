@@ -1,6 +1,7 @@
 import { Card, Typography, List, ListItem, ListItemPrefix, ListItemSuffix, Chip } from "@material-tailwind/react";
 import { PresentationChartBarIcon, UserCircleIcon, InboxIcon } from "@heroicons/react/24/solid";
 import TodayRoundedIcon from '@mui/icons-material/TodayRounded';
+import { Link } from 'react-router-dom';
 
 
 export function Dashboard({ onAddTask }) {
@@ -13,20 +14,22 @@ export function Dashboard({ onAddTask }) {
       </div>
       <List>
         <ListItem className="text-[#F7EFE5]" onClick={onAddTask}>
-          <ListItemPrefix>
-            <PresentationChartBarIcon className="m-5 w-5 text-[#F7EFE5]" />
+          <ListItemPrefix className="mr-2">
+            <PresentationChartBarIcon className="w-5 h-5 text-[#F7EFE5]" />
           </ListItemPrefix>
           Add task
         </ListItem>
         <ListItem className="text-[#F7EFE5]">
-          <ListItemPrefix>
-            <InboxIcon className="m-5 w-5 text-[#F7EFE5]" />
+          <ListItemPrefix className="mr-2">
+            <InboxIcon className="w-5 h-5 text-[#F7EFE5]" />
           </ListItemPrefix>
-          Inbox
+          <Link to="/Editask" >
+          Inbox </Link>
+         
         </ListItem>
         <ListItem className="text-[#F7EFE5]">
-          <ListItemPrefix>
-            <TodayRoundedIcon className="m-5 w-5 text-[#F7EFE5]"/>
+          <ListItemPrefix className="mr-2">
+            <TodayRoundedIcon className="w-5 h-5 text-[#F7EFE5]"/>
           </ListItemPrefix>
           Today
           <ListItemSuffix>
@@ -34,13 +37,12 @@ export function Dashboard({ onAddTask }) {
           </ListItemSuffix>
         </ListItem>
         <ListItem className="text-[#F7EFE5]">
-          <ListItemPrefix>
-            <UserCircleIcon className="m-5 w-5 text-[#F7EFE5]" />
+          <ListItemPrefix className="mr-2">
+            <UserCircleIcon className="w-5 h-5 text-[#F7EFE5]" />
           </ListItemPrefix>
           Upcoming
         </ListItem>
       </List>
-    
     </Card>
   );
 }
