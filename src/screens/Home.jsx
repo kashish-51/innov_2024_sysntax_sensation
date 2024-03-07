@@ -17,7 +17,6 @@ function Home() {
       <Header/>
  {/* <Cursor /> */}
  <Homes />
-
         <Footer />
         <ChatbotEmbed />
         {/* <TwilioSMSComponent /> */}

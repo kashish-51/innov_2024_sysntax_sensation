@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 
@@ -30,7 +32,8 @@ const Login = (props) => {
 
     return (
         <>
-        <div className="flex min-h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8  bg-yellow">
+        <Header/>
+        <div className="flex min-h-screen flex-1 flex-col  px-6 py-12 lg:px-8  bg-yellow">
             <h2 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-[#674188]  hover:underline">
                 Login
             </h2>
@@ -84,6 +87,7 @@ const Login = (props) => {
                 </form>
             </div>
         </div>
+        <Footer/>
         </>
     );
 }

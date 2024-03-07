@@ -2,6 +2,6 @@ import {createContext} from "react" ;
 
 //context will hold states related to notes
 
-const noteContext = createContext();
+const NoteContext = createContext();
 
-export default noteContext;
+export default NoteContext;

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Main from './Main';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Signup = () => {
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "", cpassword: "" });
@@ -36,6 +38,7 @@ const Signup = () => {
 
     return (
         <>
+        <Header/>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8  bg-yellow " >
             <h2 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-[#674188]  hover:underline">
                 Sign in to your account
@@ -113,17 +116,18 @@ const Signup = () => {
                         </div>
                     </div>
                     <div>
-                    <Link to="/Main" className="flex w-full justify-center rounded-md bg-[#674188] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#5D3891] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                    <button type="submit" className="flex w-full justify-center rounded-md bg-[#674188] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#5D3891] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
 
     Sign in
  
-</Link>
+</button>
 
                     </div>
                 </form>
                 <p className='my-[6px]'>Already a user? <Link to="/login">Login</Link></p>
             </div>
         </div>
+        <Footer/>
         </>
     )
 }
