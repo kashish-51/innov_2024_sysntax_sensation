@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export function Dashboard({ onAddTask }) {
   return (
-    <Card className="h-[calc(100vh)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 bg-[#573178]  " style={{ backdropFilter: 'blur(5px)', backgroundColor: 'rgba(87, 49, 120, 0.8)' }}>
+    <Card className="h-[calc(100vh)+2rem] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 bg-[#573178]  " style={{ backdropFilter: 'blur(5px)', backgroundColor: 'rgba(87, 49, 120, 0.8)' }}>
       <div className="m-5 w-4">
         <Typography variant="h5" className="text-[#F7EFE5]">
           Sidebar
@@ -24,7 +24,7 @@ export function Dashboard({ onAddTask }) {
             <InboxIcon className="w-5 h-5 text-[#F7EFE5]" />
           </ListItemPrefix>
           <Link to="/Editask" >
-          Inbox </Link>
+         Show task </Link>
          
         </ListItem>
         <ListItem className="text-[#F7EFE5]">

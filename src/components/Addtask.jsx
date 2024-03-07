@@ -6,7 +6,7 @@ const Addtask = (props) => {
 
 let navigate = useNavigate();
 const context = useContext(NoteContext);
-const { addNote} = context;                 //got addnote from context
+const { addNote} = context;                                             //got addnote from context
 const[note,setNote]= useState({title: "", description: "", tag: "", priority: "", date: ""})   //declared evrything empty at first
 
 const handleClick = (e)=>{
@@ -28,10 +28,10 @@ setNote({...note, [e.target.name]: e.target.value})
       Add Task
   </h2>
 
-  <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm bg-opacity-50 bg-[#C3ACD0] bg-blur-md border-2 border-stone-50 backdrop-filter backdrop-blur-md backdrop-saturate-150 rounded-lg p-6 shadow-2xl">
+  <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-lg bg-opacity-50 bg-[#C3ACD0] bg-blur-md border-2 border-stone-50 backdrop-filter backdrop-blur-md backdrop-saturate-150 rounded-lg p-6 shadow-2xl">
       <form className="space-y-6" onSubmit={handleClick} >
-          <div className="my -5">
-              <label htmlFor="title" className="block text-sm font-medium leading-6 text-gray-900">
+          <div >
+              <label htmlFor="title" className="block text-sm font-medium leading-6 text-[#674188] ">
                   Title
               </label>
               <div className="mt-1 my-5">
@@ -44,7 +44,8 @@ setNote({...note, [e.target.name]: e.target.value})
                   />
               </div>
           </div>
-          <label htmlFor="description" className="block text-sm font-medium leading-6 text-gray-900">
+          <div className="mt-2">
+          <label htmlFor="description" className="block text-sm font-medium leading-6 text-[#674188] ">
              Description
           </label>
           <div className="mt-1 my-0">
@@ -61,13 +62,13 @@ setNote({...note, [e.target.name]: e.target.value})
               className="block w-full rounded-md border-0  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
-
+          </div>
           <div className="flex items-center justify-between">
-              <label htmlFor="tag" className="block text-sm font-medium leading-6 text-gray-900">
+              <label htmlFor="tag" className="block text-sm font-medium leading-6 text-[#674188] ">
                   Tag
               </label>
           </div>
-          <div className="">
+          <div className="mt-1 my-5">
               <input
               id="tag"
                name="tag" 
@@ -78,9 +79,9 @@ setNote({...note, [e.target.name]: e.target.value})
                   className="block w-full mt-1 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
           </div>
-          <div className="my-4">
+          <div className="my-1">
               <div className="flex items-center justify-between">
-                  <label htmlFor="date" className="block text-sm font-medium leading-6 text-gray-900">
+                  <label htmlFor="date" className="block text-sm font-medium leading-6 text-[#674188] ">
                       Date
                   </label>
               </div>
@@ -99,8 +100,8 @@ setNote({...note, [e.target.name]: e.target.value})
               </div>
               
           </div>
-          <div className="flex items-center justify-between">
-              <label htmlFor="priority" className="block text-sm font-medium leading-6 text-gray-900">
+          <div className="flex items-center -mt-4 justify-between">
+              <label htmlFor="priority" className="block text-sm font-medium leading-6 text-[#674188] ">
                   Priority
               </label>
           </div>
@@ -112,11 +113,12 @@ setNote({...note, [e.target.name]: e.target.value})
               onChange={onChange}
   type="text"
               placeholder="Priority"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-purple-800 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
           </div>
+
           <div>
-          <button type="submit" className="btn text-white bg-purple-800 hover:bg-purple-500 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none" disabled={note.title.length < 5 || note.description.length < 5}>Add Task</button>
+          <button type="submit" className="btn -mt-7 text-white bg-purple-800 hover:bg-purple-500 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none" disabled={note.title.length < 5 || note.description.length < 5}>Add Task</button>
           </div>
       </form>
   </div>
