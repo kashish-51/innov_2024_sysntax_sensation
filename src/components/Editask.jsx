@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import NoteContext from '../context/notes/NoteContext';
 import Showtask from './Showtask';
+import Header from './Header';
+import Footer from './Footer';
 
 function Editask(props) {
   const context = useContext(NoteContext);
@@ -46,7 +48,7 @@ function Editask(props) {
 
   return (
     <>
-
+<Header/>
 
 <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Launch demo modal
@@ -100,6 +102,7 @@ function Editask(props) {
           })}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
