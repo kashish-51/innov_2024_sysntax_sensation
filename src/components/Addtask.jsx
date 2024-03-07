@@ -1,9 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import React, {useContext, useState} from 'react'
-import NoteContext from '../context/notes/NoteContext'; 
+import NoteContext from '../context/notes/NoteContext';
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
 const Addtask = (props) => {
-
 let navigate = useNavigate();
 const context = useContext(NoteContext);
 const { addNote} = context;                                             //got addnote from context
@@ -15,6 +16,7 @@ addNote(note.title, note.description, note.tag,note.priority, note.date);
 console.log(addNote)       
 setNote({title:"", description: "", tag: "", priority:""})
 navigate("/Editask");
+toast.success("Task Added Successfully! 😁");
 
   }
   const onChange=(e)=>{
@@ -118,7 +120,7 @@ setNote({...note, [e.target.name]: e.target.value})
           </div>
 
           <div>
-          <button type="submit" className="btn -mt-7 text-white bg-purple-800 hover:bg-purple-500 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none" disabled={note.title.length < 5 || note.description.length < 5}>Add Task</button>
+          <button type="submit"  className="btn -mt-7 text-white bg-purple-800 hover:bg-purple-500 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none" disabled={note.title.length < 5 || note.description.length < 5}>Add Task</button>
           </div>
       </form>
   </div>

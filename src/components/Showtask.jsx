@@ -8,7 +8,11 @@ import EditIcon from '@mui/icons-material/Edit';
 import Checkbox from '@mui/material/Checkbox';
 import NoteContext from '../context/notes/NoteContext';
 
+
+
+
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
 
 const Showtask = (props) => {
     const context = useContext(NoteContext);
@@ -60,6 +64,7 @@ const Showtask = (props) => {
                         </Typography>
                         <Stack direction="row" spacing={1} alignItems="center">
                             {/* Checkbox */}
+                            
                             <Checkbox {...label} onClick={() => deleteNote(note._id)} />
 
                             {/* Edit icon */}
