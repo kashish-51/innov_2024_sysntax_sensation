@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import {  toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" });
+    let navigate = useNavigate();
 
     const handelSubmit = async (e) => {
         e.preventDefault();
@@ -20,8 +25,21 @@ const Login = (props) => {
         });
 
         const json = await response.json();
-        localStorage.setItem('token', json.authtoken);
         console.log(json);
+    
+        if (json.success) {
+          //save the auth token and redirect
+          localStorage.setItem('token', json.authtoken);
+          toast.success("Logged in  Successfully! ");
+          navigate("/Main");
+    
+        }
+        else {
+          alert("Invalid credentials");
+          toast.error("Logged in  failed! ");
+
+    
+        }
     }
 
     const onChange = (e) => {
@@ -77,9 +95,11 @@ const Login = (props) => {
                     </div>
 
                     <div>
-                        <Link to="/Main" className="flex w-full justify-center rounded-md bg-[#674188] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#5D3891] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        Login
-                        </Link>
+                    <button type="submit" className="flex w-full justify-center rounded-md bg-[#674188] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#5D3891] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+
+Login
+
+</button>
       
                     </div>
                 </form>

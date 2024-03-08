@@ -4,28 +4,31 @@ import Showtask from './Showtask';
 import Header from './Header';
 import Footer from './Footer';
 import {  toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
 
 
 function Editask(props) {
   const context = useContext(NoteContext);
   const { notes, getNotes,editNote } = context;
+  let navigate = useNavigate();
+
+
+  // useEffect(() => {
+  //   // Fetch notes when the component mounts or updates
+  //   getNotes();
+  // }, []); // Empty dependency array to ensure effect runs only once after initial render
 
 
   useEffect(() => {
-    // Fetch notes when the component mounts or updates
-    getNotes();
-  }, []); // Empty dependency array to ensure effect runs only once after initial render
-
-
-//   useEffect(() => {
-// if(localStorage.getItem('token')){
-//   getNotes();
-// }
-// else{
-//   navigate("/login")
-// }
-//     // eslint-disable-next-line
-//   }, [])
+if(localStorage.getItem('token')){
+  getNotes();
+}
+else{
+  navigate("/login")
+}
+    // eslint-disable-next-line
+  }, [])
 
 
   const ref = useRef(null)
