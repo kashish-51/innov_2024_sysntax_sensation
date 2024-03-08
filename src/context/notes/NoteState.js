@@ -13,7 +13,7 @@ const getNotes = async ()=>{
     method: "GET", 
     headers: {
       "Content-Type": "application/json",
-      "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkZDhlNWI5N2ZjMGE4YzA1YzE2MTgxIn0sImlhdCI6MTcwOTAxOTI5M30.TAoTtoKsVGDbhSd6lQ1_SCxLjJKqIR721ZaoJJDtpOU"
+      "auth-token": localStorage.getItem('token')
     },
      });
      const json = await response.json()
@@ -29,7 +29,7 @@ const addNote = async (title,description,tag,priority,date)=>{
     method: "POST",   
     headers: {
       "Content-Type": "application/json",
-      "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkZDhlNWI5N2ZjMGE4YzA1YzE2MTgxIn0sImlhdCI6MTcwOTAxOTI5M30.TAoTtoKsVGDbhSd6lQ1_SCxLjJKqIR721ZaoJJDtpOU"
+      "auth-token": localStorage.getItem('token')
     },
     body: JSON.stringify({title,description,tag,priority,date}), 
   });
@@ -44,7 +44,7 @@ const deleteNote = async (id)=>{
    
     headers: {
       "Content-Type": "application/json",
-      "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkZDhlNWI5N2ZjMGE4YzA1YzE2MTgxIn0sImlhdCI6MTcwOTAxOTI5M30.TAoTtoKsVGDbhSd6lQ1_SCxLjJKqIR721ZaoJJDtpOU"
+      "auth-token": localStorage.getItem('token')
     }
   });
 const json=  response.json();
@@ -62,7 +62,7 @@ const editNote =async  (id, title,description,tag,priority,date)=>{
     method: "PUT", 
     headers: {
       "Content-Type": "application/json",
-      "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVkZDhlNWI5N2ZjMGE4YzA1YzE2MTgxIn0sImlhdCI6MTcwOTAxOTI5M30.TAoTtoKsVGDbhSd6lQ1_SCxLjJKqIR721ZaoJJDtpOU"
+      "auth-token": localStorage.getItem('token')
     },
    
     body: JSON.stringify({title,description,tag,priority,date}), 

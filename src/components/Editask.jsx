@@ -3,6 +3,8 @@ import NoteContext from '../context/notes/NoteContext';
 import Showtask from './Showtask';
 import Header from './Header';
 import Footer from './Footer';
+import {  toast } from 'react-toastify';
+
 
 function Editask(props) {
   const context = useContext(NoteContext);
@@ -38,6 +40,7 @@ function Editask(props) {
 
   const handleClick = (e) => {
     editNote(note.id, note.etitle, note.edescription, note.etag, note.epriority, note.edate);
+    toast.success("Task edited Successfully! ");
     refClose.current.click();
   }
 
@@ -91,9 +94,6 @@ function Editask(props) {
           </div>
         </div>
       </div>
-
-
-
 
       <div className="row my-3">
         <div className="  flex ">
