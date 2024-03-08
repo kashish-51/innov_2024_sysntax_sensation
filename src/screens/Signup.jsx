@@ -3,6 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import Main from './Main';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import {  toast } from 'react-toastify';
+
+
 
 const Signup = () => {
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "", cpassword: "" });
@@ -29,7 +32,16 @@ const Signup = () => {
         });
         const json = await response.json();
         console.log(json);
-        localStorage.setItem('token', json.authtoken);
+        if (json.success) {
+          //save the auth token and redirect
+          localStorage.setItem('token', json.authtoken);
+          navigate("/Main");
+          toast.success("Signed in Successfully! ");
+    
+        }
+        else {
+            toast.error("Error in signing in ! ");
+        }
     }
 
     const onchange = (e) => {
