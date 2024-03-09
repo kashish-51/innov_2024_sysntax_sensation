@@ -11,14 +11,7 @@ const Signup = () => {
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "", cpassword: "" });
     const navigate = useNavigate();
 
-    useEffect(() => {
-        // Check if user is already signed in
-        const token = localStorage.getItem('token');
-        if (token) {
-            // If user is signed in, redirect to login page
-            navigate('/signup');
-        }
-    }, [navigate]);
+
 
     const handelSubmit = async (e) => {
         e.preventDefault();

@@ -20,7 +20,6 @@ import Editask from './components/Editask';
 function App() {
   return (  
 
-
           <div className="">
             <NoteState>
             <Router>

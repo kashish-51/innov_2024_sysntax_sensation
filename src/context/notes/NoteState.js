@@ -21,7 +21,6 @@ console.log(json)
 setNotes(json)
 }
 
-
 //Add a note
 const addNote = async (title,description,tag,priority,date)=>{
   //Api call
